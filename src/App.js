@@ -125,7 +125,7 @@ function App() {
     }
     try {
       // Call backend but do NOT write to sheet, just get preview
-      const response = await fetch('http://localhost:8000/generate-test-cases', {
+      const response = await fetch('https://www.testometer.in/api/generate-test-cases', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -167,7 +167,7 @@ function App() {
       return;
     }
     try {
-      const response = await fetch('http://localhost:8000/generate-test-cases', {
+      const response = await fetch('https://www.testometer.in/api/generate-test-cases', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
