@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
@@ -481,4 +481,815 @@ tr:last-child td {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+} */
+
+
+
+
+
+
+/* General Body Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: linear-gradient(120deg, #f4f7fa 0%, #e9eef6 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: flex-start; /* Align content to the top */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark Mode Body Styles */
+body.dark-mode {
+  background: linear-gradient(120deg, #2c2c2c 0%, #3a3a3a 100%); /* Darker gradient */
+  color: #e0e0e0; /* Light text color */
+}
+
+/* App Container */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 32px;
+  width: 100% !important; /* Ensure it takes full width available, added !important */
+  max-width: 2000px !important; /* **EVEN WIDER OVERALL APP WIDTH** */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Stacked Layout for Cards */
+.stacked-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100% !important; /* Added !important */
+  max-width: 100% !important; /* Added !important */
+  gap: 32px;
+}
+
+/* Card Styling */
+.card {
+  width: 1000px !important; /* Added !important */
+  max-width: 1400px !important; /* **EVEN WIDER PROMPT CARD WIDTH** */
+  margin-bottom: 0;
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 8px 36px rgba(44, 62, 80, 0.13);
+  padding: 32px 32px 28px 32px;
+  border: 1.5px solid #e3eefd;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Dark Mode Card Styling */
+.dark-mode .card {
+  background: #3a3a3a;
+  border-color: #4a4a4a;
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 600px) {
+  .card {
+      width: 98% !important; /* Added !important */
+      max-width: 98% !important; /* Added !important */
+      padding: 18px 2vw 18px 2vw;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 2.1rem;
+  color: #2563eb;
+  letter-spacing: 1px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+/* Dark Mode Heading */
+.dark-mode h1 {
+  color: #6a9aff;
+}
+
+.history-btn {
+  display: block;
+  margin: 0 auto 18px auto;
+  background: #f4f7fa;
+  color: #2563eb;
+  border: 1.5px solid #e3eefd;
+  border-radius: 22px;
+  padding: 8px 28px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+}
+
+.history-btn:hover {
+  background: #e3eefd;
+  color: #174ea6;
+  border-color: #c7d9f7; /* Slightly darker border on hover */
+}
+
+/* Dark Mode History Button */
+.dark-mode .history-btn {
+  background: #4a4a4a;
+  color: #a0c0ff;
+  border-color: #5a5a5a;
+}
+.dark-mode .history-btn:hover {
+  background: #5a5a5a;
+  color: #c0d0ff;
+  border-color: #6a6a6a;
+}
+
+label {
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 6px;
+  display: block;
+  position: relative;
+  font-size: 1.08rem;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+/* Dark Mode Label */
+.dark-mode label {
+  color: #a0c0ff;
+}
+
+input[type="file"] {
+  display: block;
+  margin-bottom: 18px;
+  color: #333; /* Default file input text color */
+}
+
+/* Dark Mode File Input */
+.dark-mode input[type="file"] {
+  color: #e0e0e0; /* Dark mode file input text color */
+}
+
+
+input[type="text"], textarea {
+  width: 100% !important; /* Added !important */
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  border: 1.5px solid #b6c6e3;
+  font-size: 1.08rem;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+  background: #f7faff;
+  color: #111;
+  box-shadow: 0 1px 6px rgba(24, 119, 192, 0.04);
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus, textarea:focus {
+  border: 1.5px solid #2563eb;
+  outline: none;
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.13);
+}
+
+/* Dark Mode Inputs */
+.dark-mode input[type="text"],
+.dark-mode textarea {
+  background: #4a4a4a;
+  border-color: #6a6a6a;
+  color: #f0f0f0;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+.dark-mode input[type="text"]:focus,
+.dark-mode textarea:focus {
+  border-color: #6a9aff;
+  box-shadow: 0 2px 12px rgba(106, 154, 255, 0.2);
+}
+
+
+button[type="submit"], .preview-actions button {
+  padding: 15px 32px;
+  border-radius: 22px;
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 1.13rem;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.10), 0 2px 8px rgba(37, 99, 235, 0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  margin-top: 12px;
+  letter-spacing: 0.5px;
+  position: relative;
+  min-width: 150px;
+  margin-right: 0;
+}
+
+.preview-actions button {
+  margin-top: 0;
+  font-size: 1rem;
+  padding: 12px 22px;
+  min-width: 120px;
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+}
+
+.preview-actions .write-btn {
+  background: linear-gradient(90deg, #059669 0%, #34d399 100%);
+  color: #fff;
+  font-weight: 700;
+}
+
+.preview-actions .write-btn:hover {
+  background: linear-gradient(90deg, #34d399 0%, #059669 100%);
+}
+
+button[type="submit"]:hover:not(:disabled), .preview-actions button:hover {
+  background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.13);
+  transform: translateY(-2px) scale(1.04);
+}
+
+button[type="submit"]:active, .preview-actions button:active {
+  transform: scale(0.98);
+}
+
+button[type="submit"]:disabled, .preview-actions button:disabled {
+  background: #b6c6e3;
+  color: #fff;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Dark Mode Buttons */
+.dark-mode button[type="submit"],
+.dark-mode .preview-actions button:not(.write-btn) {
+  background: linear-gradient(90deg, #6a9aff 0%, #a0c0ff 100%);
+  box-shadow: 0 4px 18px rgba(106, 154, 255, 0.15), 0 2px 8px rgba(106, 154, 255, 0.1);
+}
+.dark-mode button[type="submit"]:hover:not(:disabled),
+.dark-mode .preview-actions button:not(.write-btn):hover {
+  background: linear-gradient(90deg, #a0c0ff 0%, #6a9aff 100%);
+  box-shadow: 0 8px 32px rgba(106, 154, 255, 0.2);
+}
+.dark-mode .preview-actions .write-btn {
+  background: linear-gradient(90deg, #06b678 0%, #6ee7b7 100%); /* Green for dark mode */
+  box-shadow: 0 4px 18px rgba(6, 182, 120, 0.15), 0 2px 8px rgba(6, 182, 120, 0.1);
+}
+.dark-mode .preview-actions .write-btn:hover {
+  background: linear-gradient(90deg, #6ee7b7 0%, #06b678 100%);
+  box-shadow: 0 8px 32px rgba(6, 182, 120, 0.2);
+}
+.dark-mode button[type="submit"]:disabled,
+.dark-mode .preview-actions button:disabled {
+  background: #5a5a5a;
+}
+
+
+.preview-area {
+  width: 90% !important; /* Added !important */
+  max-width: 1400px !important; /* **EVEN WIDER PREVIEW AREA WIDTH** */
+  margin-top: 0;
+  margin-bottom: 30px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 36px rgba(44, 62, 80, 0.10);
+  padding: 32px 24px 24px 24px;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  color: #111;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Dark Mode Preview Area */
+.dark-mode .preview-area {
+  background: #3a3a3a;
+  border: 1.5px solid #4a4a4a;
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.4);
+  color: #e0e0e0;
+}
+
+@media (max-width: 900px) {
+  .preview-area {
+      width: 98% !important; /* Added !important */
+      max-width: 98% !important; /* Added !important */
+      padding: 18px 4vw 18px 4vw;
+      margin-bottom: 18px;
+  }
+}
+
+.preview-actions {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: flex-end;
+  gap: 18px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .preview-actions {
+      justify-content: center; /* Center buttons on smaller screens */
+  }
+}
+
+/* Table Specific Styles for 10 Columns */
+.table-container {
+  width: 100% !important; /* Added !important */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  margin-top: 0;
+  margin-bottom: 18px;
+  border-radius: 16px; /* Apply border-radius here to contain the scrollable content */
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.10), 0 2px 8px rgba(37, 99, 235, 0.08);
+}
+
+.dark-mode .table-container {
+  box-shadow: 0 4px 18px rgba(106, 154, 255, 0.15), 0 2px 8px rgba(106, 154, 255, 0.1);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  /* MIN-WIDTH IS CRUCIAL FOR HORIZONTAL SCROLLING WITH MANY COLUMNS */
+  /* Adjust this value based on your actual content and desired minimum column widths */
+  min-width: 1800px !important; /* **EVEN WIDER TABLE MINIMUM WIDTH** */
+  background: #f7faff;
+  font-size: 1.08rem;
+  /* border-radius applied to container, not table directly when overflow-x: auto */
+  overflow: hidden; /* Ensures content respects rounded corners */
+  margin-bottom: 10px;
+  color: #111;
+}
+
+/* Dark Mode Table */
+.dark-mode table {
+  background: #2a2a2a;
+  color: #f0f0f0;
+}
+
+thead tr {
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Dark Mode Table Header */
+.dark-mode thead tr {
+  background: linear-gradient(90deg, #6a9aff 0%, #a0c0ff 100%);
+}
+
+th, td {
+  padding: 18px 13px;
+  border-bottom: 1.5px solid #e3eefd;
+  text-align: left;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  white-space: nowrap; /* Prevent text wrapping within cells */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis for hidden overflow text */
+}
+
+th {
+  color: #fff;
+  font-weight: 700;
+  background: inherit;
+  letter-spacing: 0.5px;
+  font-size: 1.13rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Dark Mode Table Cells and Headers */
+.dark-mode th, .dark-mode td {
+  border-color: #4a4a4a;
+  color: #e0e0e0;
+}
+.dark-mode th {
+  color: #f0f0f0; /* Ensure header text is light in dark mode */
+}
+
+
+/* Column Specific Widths (Uncomment and adjust these as needed!) */
+/* This is crucial for controlling how wide each column is by default */
+/* You'll need to eyeball these values or calculate them based on content */
+/*
+td:nth-child(1) { min-width: 80px; }  Test Case ID
+td:nth-child(2) { min-width: 200px; } Test Case Objective
+td:nth-child(3) { min-width: 150px; } Preconditions
+td:nth-child(4) { min-width: 250px; } Test Steps
+td:nth-child(5) { min-width: 120px; } Test Data
+td:nth-child(6) { min-width: 200px; } Expected Result
+td:nth-child(7) { min-width: 120px; } Actual Result
+td:nth-child(8) { min-width: 100px; } Status
+td:nth-child(9) { min-width: 80px; }  Priority
+td:nth-child(10) { min-width: 150px; } Remarks
+*/
+
+tr:nth-child(even) td {
+  background: #e9eef6;
+}
+
+/* Dark Mode Even Rows */
+.dark-mode tr:nth-child(even) td {
+  background: #333333;
+}
+
+tr {
+  animation: row-fadein 0.5s;
+  transition: background 0.18s;
+}
+
+tr:hover td {
+  background: #e3eefd;
+}
+
+/* Dark Mode Row Hover */
+.dark-mode tr:hover td {
+  background: #444444;
+}
+
+@keyframes row-fadein {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.status-success {
+  background: #e6ffe6;
+  padding: 18px;
+  border-radius: 8px;
+  margin-top: 28px;
+  color: #1a7f37;
+  font-weight: 500;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+/* Dark Mode Success Status */
+.dark-mode .status-success {
+  background: #1a4a2a;
+  color: #6ee7b7;
+}
+
+.status-error {
+  background: #ffe6e6;
+  padding: 18px;
+  border-radius: 8px;
+  margin-top: 28px;
+  color: #d32f2f;
+  font-weight: 500;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+/* Dark Mode Error Status */
+.dark-mode .status-error {
+  background: #4a1a1a;
+  color: #ef9a9a;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 18px 0 10px 0;
+  color: #2563eb;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  background: transparent;
+  margin-top: 30px;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(24,119,192,0.13);
+  font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+/* Dark Mode Footer */
+.dark-mode .footer {
+  color: #a0c0ff;
+  text-shadow: none;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 36px rgba(44, 62, 80, 0.18);
+  padding: 36px 44px 36px 44px;
+  min-width: 340px;
+  max-width: 98vw;
+  width: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 22px;
+  box-sizing: border-box;
+  color: #111;
+}
+
+/* Dark Mode Modal */
+.dark-mode .modal {
+  background: #3a3a3a;
+  border: 1.5px solid #4a4a4a;
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.4);
+  color: #e0e0e0;
+}
+
+.modal label {
+  margin-bottom: 4px;
+  font-size: 1.08rem;
+  color: #2563eb;
+}
+
+/* Dark Mode Modal Label */
+.dark-mode .modal label {
+  color: #a0c0ff;
+}
+
+.modal input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: 1.5px solid #b6c6e3;
+  font-size: 1.08rem;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background: #f7faff;
+  color: #111;
+  box-shadow: 0 1px 6px rgba(24, 119, 192, 0.04);
+  margin-top: 6px;
+}
+
+.modal input[type="text"]:focus {
+  border: 1.5px solid #2563eb;
+  outline: none;
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.13);
+}
+
+/* Dark Mode Modal Text Input */
+.dark-mode .modal input[type="text"] {
+  background: #4a4a4a;
+  border-color: #6a6a6a;
+  color: #f0f0f0;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+.dark-mode .modal input[type="text"]:focus {
+  border-color: #6a9aff;
+  box-shadow: 0 2px 12px rgba(106, 154, 255, 0.2);
+}
+
+.modal input[type="file"] {
+  margin-top: 8px;
+  margin-bottom: 18px;
+  border: none;
+  font-size: 1rem;
+  background: none;
+  display: block;
+  width: 100%;
+  color: #333; /* Ensure default color for file input text */
+}
+
+/* Dark Mode Modal File Input */
+.dark-mode .modal input[type="file"] {
+  color: #e0e0e0; /* Dark mode color for file input text */
+}
+
+.modal input[type="file"]::-webkit-file-upload-button {
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background 0.18s;
+}
+
+.modal input[type="file"]::file-selector-button {
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background 0.18s;
+}
+
+.modal input[type="file"]::-webkit-file-upload-button:hover,
+.modal input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
+}
+
+/* Dark Mode File Upload Button */
+.dark-mode .modal input[type="file"]::-webkit-file-upload-button,
+.dark-mode .modal input[type="file"]::file-selector-button {
+  background: linear-gradient(90deg, #6a9aff 0%, #a0c0ff 100%);
+}
+.dark-mode .modal input[type="file"]::-webkit-file-upload-button:hover,
+.dark-mode .modal input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(90deg, #a0c0ff 0%, #6a9aff 100%);
+}
+
+
+.modal .write-btn {
+  margin-top: 18px;
+  padding: 16px 0;
+  border-radius: 22px;
+  background: linear-gradient(90deg, #059669 0%, #34d399 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.13rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(5, 150, 105, 0.10), 0 2px 8px rgba(52, 211, 153, 0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  min-width: 220px;
+  width: 100%;
+}
+
+.modal .write-btn:hover {
+  background: linear-gradient(90deg, #34d399 0%, #059669 100%);
+  box-shadow: 0 8px 32px rgba(5, 150, 105, 0.13);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Dark Mode Modal Write Button */
+.dark-mode .modal .write-btn {
+  background: linear-gradient(90deg, #06b678 0%, #6ee7b7 100%);
+  box-shadow: 0 4px 18px rgba(6, 182, 120, 0.15), 0 2px 8px rgba(6, 182, 120, 0.1);
+}
+.dark-mode .modal .write-btn:hover {
+  background: linear-gradient(90deg, #6ee7b7 0%, #06b678 100%);
+  box-shadow: 0 8px 32px rgba(6, 182, 120, 0.2);
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  background: #f4f7fa;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  color: #888;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.08);
+}
+
+.modal-close:hover {
+  background: #e3eefd;
+  color: #2563eb;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.1);
+}
+
+/* Dark Mode Modal Close Button */
+.dark-mode .modal-close {
+  background: #4a4a4a;
+  color: #a0a0a0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.dark-mode .modal-close:hover {
+  background: #5a5a5a;
+  color: #c0c0c0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(44, 62, 80, 0.18);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Dark Mode Modal Overlay */
+.dark-mode .modal-overlay {
+  background: rgba(0, 0, 0, 0.5); /* Darker, more opaque backdrop */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.info-tooltip .info {
+  cursor: help;
+  font-size: 0.9em;
+  color: #60a5fa;
+  margin-left: 5px;
+  display: inline-flex; /* To align with text baseline */
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #60a5fa;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.dark-mode .info-tooltip .info {
+  color: #a0c0ff;
+  border-color: #a0c0ff;
+}
+
+.info-tooltip {
+  position: relative;
+  display: inline-block; /* Essential for tooltip positioning */
+}
+
+.info-tooltip .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  max-width: 320px;
+  background: #fff;
+  color: #2563eb;
+  border: 1px solid #e3eefd;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-weight: 500;
+  position: absolute;
+  z-index: 10;
+  left: 28px; /* Position to the right of the icon */
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 8px rgba(24,119,192,0.13);
+  transition: opacity 0.18s, visibility 0.18s, background 0.18s, color 0.18s, border-color 0.18s;
+  pointer-events: none;
+}
+
+.info-tooltip:hover .tooltip-text,
+.info-tooltip:focus-within .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Dark Mode Tooltip */
+.dark-mode .info-tooltip .tooltip-text {
+  background: #4a4a4a;
+  color: #a0c0ff;
+  border-color: #6a6a6a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Spinner for loading states */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
