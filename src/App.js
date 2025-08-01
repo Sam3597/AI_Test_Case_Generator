@@ -733,7 +733,7 @@ function App() {
                 </div>
             </div>
             <div className="footer">
-                &copy; {new Date().getFullYear()} AI Test Case Generator &mdash; by <a href="https://www.testometer.in" target="_blank" rel="noopener noreferrer">Testometer</a>
+                &copy; {new Date().getFullYear()} AI Test Case Generator &mdash; by <a href="https://www.testometer.co.in" target="_blank" rel="noopener noreferrer">Testometer</a>
             </div>
         </div>
     );
